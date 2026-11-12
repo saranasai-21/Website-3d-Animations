@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
-import { extname, join, normalize } from "node:path";
+import { basename, extname, join, normalize } from "node:path";
 
 const port = Number(process.env.PORT || 4173);
 const root = import.meta.dirname || process.cwd();
@@ -9,16 +9,24 @@ const types = {
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
   ".svg": "image/svg+xml",
-  ".json": "application/json"
+  ".json": "application/json",
+  ".pdf": "application/pdf"
 };
 
 createServer(async (req, res) => {
   const requestPath = decodeURIComponent((req.url || "/").split("?")[0]);
-  const safePath = normalize(requestPath === "/" ? "index.html" : requestPath.replace(/^\/+/, ""));
+  const cleanRel = requestPath === "/" ? "index.html" : requestPath.replace(/^\/+/, "");
+  const safePath = normalize(cleanRel);
   if (safePath.startsWith("..")) { res.writeHead(403).end("Forbidden"); return; }
+
+  const isVendorThree = cleanRel.startsWith("vendor/three/");
+  const targetFile = isVendorThree
+    ? join(root, "node_modules", "three", "build", basename(safePath))
+    : join(root, safePath);
+
   try {
-    const body = await readFile(join(root, safePath));
-    res.writeHead(200, { "Content-Type": types[extname(safePath)] || "application/octet-stream" });
+    const body = await readFile(targetFile);
+    res.writeHead(200, { "Content-Type": types[extname(targetFile)] || "application/octet-stream" });
     res.end(body);
   } catch {
     res.writeHead(404).end("Not found");

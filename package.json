@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "node server.mjs",
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    "build": "node build.mjs",
+    "vercel-build": "node build.mjs"
   },
   "dependencies": {
     "three": "^0.184.0"
