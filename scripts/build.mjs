@@ -1,9 +1,9 @@
 import { cp, mkdir, readdir, rm } from "node:fs/promises";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = import.meta.dirname || process.cwd();
+const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const outDir = join(root, "dist");
-const excludeFiles = new Set(["server.mjs", "build.mjs"]);
 const allowedExt = new Set([".html", ".css", ".js", ".pdf", ".svg", ".json"]);
 
 await rm(outDir, { recursive: true, force: true });
@@ -13,7 +13,7 @@ const entries = await readdir(root, { withFileTypes: true });
 for (const entry of entries) {
   if (!entry.isFile()) continue;
   const name = entry.name;
-  if (excludeFiles.has(name) || name === "package.json" || name === "package-lock.json" || name === "vercel.json") {
+  if (name === "package.json" || name === "package-lock.json" || name === "vercel.json") {
     continue;
   }
   const dot = name.lastIndexOf(".");

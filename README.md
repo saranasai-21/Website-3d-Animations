@@ -20,7 +20,7 @@ An interactive WebGL portfolio built with vanilla ES modules, custom GLSL shader
 
 - **Rendering:** Three.js (`0.184.0`), custom GLSL vertex/fragment shaders, CSS 3D transforms
 - **Frontend:** Vanilla HTML, CSS glassmorphism UI, ES Modules (no framework runtime overhead)
-- **Tooling:** Node.js static dev server (`server.mjs`) and zero-dependency static bundler (`build.mjs`) for Vercel
+- **Tooling:** Node.js static dev server (`scripts/dev-server.mjs`) and zero-dependency static bundler (`scripts/build.mjs`) for Vercel
 
 ## Run Locally
 
