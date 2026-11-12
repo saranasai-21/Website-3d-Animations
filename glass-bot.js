@@ -1,10 +1,10 @@
 import * as THREE from 'three';
 import { mountSceneIntoContainer } from './shared-card-stage.js';
 
-// Cobalt Sprite — Originkit (Ray-Traced GLSL Glass Capsule & Marble Sprite)
+// Cobalt Sprite — Ray-Traced GLSL Glass Capsule & Marble Sprite
 
 const SPRITE_PALETTES = [
-  { name: 'COBALT / ORIGINKIT', spriteColor: '#1400F6', eyeColor: '#F3F2F8', background: '#000000' },
+  { name: 'COBALT / STUDIO', spriteColor: '#1400F6', eyeColor: '#F3F2F8', background: '#000000' },
   { name: 'AZURE / STUDIO', spriteColor: '#2563EB', eyeColor: '#F8FAFC', background: '#020617' },
   { name: 'VIOLET / PLASMA', spriteColor: '#6D28D9', eyeColor: '#FAF5FF', background: '#070314' },
   { name: 'CYAN / FROST', spriteColor: '#0284C7', eyeColor: '#ECFEFF', background: '#020B12' }

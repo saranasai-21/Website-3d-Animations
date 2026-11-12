@@ -1,4 +1,4 @@
-// Circular Gallery — Originkit (Vanilla JS DOM + CSS 3D port)
+// Circular Gallery — 3D Image Ring & Scroll Carousel
 
 const DEFAULT_IMAGES = [
   'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGUlMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D',
@@ -14,7 +14,7 @@ const DEFAULT_IMAGES = [
 ];
 
 const GALLERY_PALETTES = [
-  { name: 'ORIGINKIT / NOIR', background: '#000000' },
+  { name: 'OBSIDIAN / NOIR', background: '#000000' },
   { name: 'MIDNIGHT / INDIGO', background: '#030712' },
   { name: 'COSMIC / PLUM', background: '#0a0414' },
   { name: 'SLATE / STUDIO', background: '#0b1120' }

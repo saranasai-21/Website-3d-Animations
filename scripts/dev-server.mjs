@@ -11,7 +11,9 @@ const types = {
   ".js": "text/javascript; charset=utf-8",
   ".svg": "image/svg+xml",
   ".json": "application/json",
-  ".pdf": "application/pdf"
+  ".pdf": "application/pdf",
+  ".jpg": "image/jpeg",
+  ".png": "image/png"
 };
 
 createServer(async (req, res) => {
@@ -33,3 +35,4 @@ createServer(async (req, res) => {
     res.writeHead(404).end("Not found");
   }
 }).listen(port, () => console.log(`ORBIT is live at http://localhost:${port}`));
+
