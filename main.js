@@ -509,6 +509,45 @@ function clearActiveModalStage() {
   }
 }
 
+const EARTH_ATMOS_PALETTES = [
+  { name: 'ORBITAL / BLUE', atmosphere: '#4F9BFF', clouds: 5, lights: 5 },
+  { name: 'SOLAR / DUSK', atmosphere: '#FF7B47', clouds: 5.5, lights: 7.2 },
+  { name: 'AURORA / EMERALD', atmosphere: '#34D399', clouds: 4.5, lights: 6.5 },
+  { name: 'NEBULA / VIOLET', atmosphere: '#A855F7', clouds: 5, lights: 7.5 }
+];
+
+function mountEarthStage(container) {
+  let idx = 0;
+  const look = { ...EARTH_ATMOS_PALETTES[0] };
+  const cleanup = mountTerraDusk(container, {
+    background: '#02040A',
+    stars: 5,
+    size: 520,
+    drag: true,
+    hover: 6.8,
+    sun: 'cursor',
+    daylight: 87,
+    speed: 9.4,
+    look
+  });
+  return {
+    getPaletteName: () => EARTH_ATMOS_PALETTES[idx].name,
+    cyclePalette: () => {
+      idx = (idx + 1) % EARTH_ATMOS_PALETTES.length;
+      const p = EARTH_ATMOS_PALETTES[idx];
+      look.atmosphere = p.atmosphere;
+      look.clouds = p.clouds;
+      look.lights = p.lights;
+      return p.name;
+    },
+    destroy: () => {
+      cleanup?.();
+      container.style.cursor = '';
+      container.style.background = '';
+    }
+  };
+}
+
 const LIVE_ANIMATIONS = {
   '1': {
     badge: 'THREE.JS / 01',
@@ -572,6 +611,22 @@ const LIVE_ANIMATIONS = {
     hint: 'HOVER OR CLICK SLICE TO EXPAND · SCROLL TO ZOOM',
     mount: mountAccordionStrip,
     createScene: createAccordionStripScene
+  },
+  '10': {
+    badge: 'WEBGL / 10',
+    filename: 'terra-dusk-vanilla.js',
+    hint: 'DRAG TO SPIN GLOBE · HOVER TO SWEEP SUNLIGHT',
+    mount: mountEarthStage,
+    mountPreview: el => mountTerraDusk(el, {
+      background: '#000000',
+      stars: 3,
+      size: 'auto',
+      drag: false,
+      hover: 6.8,
+      sun: 'cursor',
+      daylight: 87,
+      speed: 9.4
+    })
   }
 };
 

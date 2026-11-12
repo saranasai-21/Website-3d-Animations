@@ -168,6 +168,7 @@ export function mountTerraDusk(container, userOptions = {}) {
   container.style.touchAction = 'pan-y';
 
   let c = container.querySelector('canvas');
+  const createdCanvas = !c;
   if (!c) {
     c = document.createElement('canvas');
     c.style.position = 'absolute';
@@ -176,6 +177,7 @@ export function mountTerraDusk(container, userOptions = {}) {
     c.style.height = '100%';
     c.style.display = 'block';
     c.style.pointerEvents = 'none';
+    c.style.zIndex = '1';
     container.appendChild(c);
   }
 
@@ -195,5 +197,6 @@ export function mountTerraDusk(container, userOptions = {}) {
     r.removeEventListener("pointerdown", Fe);
     r.removeEventListener("pointerup", $);
     r.removeEventListener("pointercancel", $);
+    if (createdCanvas && c.parentNode) c.parentNode.removeChild(c);
   };
 }

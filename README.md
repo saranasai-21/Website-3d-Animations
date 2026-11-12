@@ -4,7 +4,7 @@
 
 ![Portfolio Hero & Interactive 3D Earth Showcase](./assets/preview.jpg)
 
-A custom-crafted interactive 3D WebGL portfolio and modular animation playground built from scratch by **Sarana Sai Bagadi** with **AI** — combining a full-screen reactive particle cosmos, an interactive WebGL Earth hero, scrollytelling project cards, symbiote liquid CTA buttons, and a 9-box live animation showcase with a side-by-side live viewport & source inspector.
+A custom-crafted interactive 3D WebGL portfolio and modular animation playground built from scratch by **Sarana Sai Bagadi** with **AI** — combining a full-screen reactive particle cosmos, an interactive WebGL Earth hero, scrollytelling project cards, symbiote liquid CTA buttons, and a 10-box live animation showcase with a side-by-side live viewport & source inspector.
 
 ---
 
@@ -24,6 +24,7 @@ Every animation in this repository is built as a standalone vanilla ES module wi
 | 07 | Particle Bloom Daisy | `particle-flower.js` | `mountParticleFlower` | `createParticleFlowerScene` | Hover to bloom from bud, cursor brush, leave to fold |
 | 08 | Circular Gallery | `circular-gallery.js` | `mountCircularGallery` | CSS 3D Stage | Scroll/swipe fly-in & infinite 360° spin, hover flip |
 | 09 | Accordion Strip | `accordion-strip.js` | `mountAccordionStrip` | `createAccordionStripScene` | Hover/click slice expansion, scroll zoom |
+| 10 | Interactive 3D Earth | `terra-dusk-vanilla.js` | `mountTerraDusk` | Custom WebGL | Drag to spin globe, hover orbit tilt, cursor sunlight sweep |
 | FX | Venom Symbiote CTAs | `venom-buttons.js` | `initVenomButtons` | Canvas 2D Tendrils | Organic tendril hover wrapping on action pills |
 
 ---
