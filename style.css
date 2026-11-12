@@ -3017,11 +3017,11 @@ header nav {
   min-width: 72px;
   padding: 24px 20px;
   border-radius: 18px;
-  background: rgba(14, 16, 28, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(10, 13, 24, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -3259,11 +3259,11 @@ header nav {
 .experience-card {
   padding: 32px 34px;
   border-radius: 18px;
-  background: rgba(14, 16, 28, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(10, 13, 24, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .exp-header {
@@ -3611,10 +3611,10 @@ header nav {
 .anim-box {
   position: relative;
   border-radius: 18px;
-  padding: 16px;
-  background: rgba(10, 14, 28, 0.92);
+  padding: 0;
+  background: #000000;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -3647,11 +3647,9 @@ header nav {
   opacity: 1;
 }
 
-.anim-box-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+.anim-box-header,
+.anim-box-info {
+  display: none;
 }
 
 .anim-box-index {
@@ -3671,16 +3669,17 @@ header nav {
 }
 
 .anim-box-preview-dummy {
-  height: 150px;
-  border-radius: 12px;
-  background: radial-gradient(circle at center, rgba(30, 41, 69, 0.55), rgba(4, 6, 14, 0.92));
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  height: 196px;
+  width: 100%;
+  border-radius: inherit;
+  background: #000000;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .anim-placeholder-wire {

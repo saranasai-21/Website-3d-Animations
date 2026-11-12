@@ -15,19 +15,19 @@ const DEFAULTS = {
   scale: 90,
   frost: 5,
   reach: 10,
-  lean: 10,
+  lean: 4,
   blink: 10,
-  float: 15
+  float: 12
 };
 
 const ADV = {
-  restX: 12,
+  restX: 0,
   restY: 10,
-  roll: -10,
-  maxTurn: 38,
-  seamAngle: 55,
-  seamTilt: 64,
-  seamOffset: -5,
+  roll: 0,
+  maxTurn: 40,
+  seamAngle: 90,
+  seamTilt: 72,
+  seamOffset: -8,
   shell: 4.5,
   lip: 6,
   spriteSize: 59.3,
