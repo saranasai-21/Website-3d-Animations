@@ -1,0 +1,13 @@
+{
+  "name": "orbit-space-experience",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "three": "^0.184.0"
+  }
+}
